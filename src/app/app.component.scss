@@ -1,0 +1,24 @@
+
+.marg-pad-5 {
+    padding: 5px;
+    margin: 5px;
+}
+.input-div {
+    width: 450px;
+}
+.input {
+    @extend .marg-pad-5;
+    width: 200px;
+}
+.btn {
+    @extend .marg-pad-5;
+    width: 83px;
+}
+.loader {
+    display: none;
+    float: right;
+    position: relative;
+    right: 0;
+    top: -25px;
+    width: 100px;
+}

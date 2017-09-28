@@ -1,0 +1,6 @@
+<div class="input-div">
+    <input #searchbox class="input" placeholder="Enter book name to search" (keyup.enter)="searchBook(searchbox.value)"/>
+    <button class="btn" (click)="searchBook(searchbox.value)">Search</button>
+    <img [src]="loaderImg" id="j-loader" alt="loading" class="loader">
+</div>
+<app-book-list></app-book-list>

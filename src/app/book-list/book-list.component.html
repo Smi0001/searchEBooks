@@ -1,0 +1,25 @@
+<div class="books-div" *ngIf="library.length == 0">Search books</div>
+<div class="books-div" *ngIf="library.length > 0">
+    <ul class="results">
+        <li *ngFor="let book of library" class="result-preview" (click)="selectBook(book)">
+            <div *ngIf="book.volumeInfo">
+                <div class="name" title="{{book.volumeInfo.title}}">{{book.volumeInfo.title}}</div>
+                <img *ngIf="book.volumeInfo.imageLinks.smallThumbnail" src="{{book.volumeInfo.imageLinks.smallThumbnail}}" class="small-thumb"/>
+                <div class="subtext name publisher" title="{{book.volumeInfo.publisher}}">{{book.publisher}}</div>
+                <div *ngIf="book.volumeInfo.authors" class="subtext authors name" title="{{book.volumeInfo.authors}}">{{book.volumeInfo.authors.join(', ')}}</div>
+            </div>
+        </li>
+    </ul>
+    <div class="preview" *ngIf="selectedBook">
+        <div class="preview-header">Book Preview</div>
+        <hr/>
+        <div>
+            <h2 title="{{selectedBook.volumeInfo.title}}" class="name">{{selectedBook.volumeInfo.title}}</h2>
+            <div *ngIf="selectedBook.volumeInfo.authors" class="authors name">Authors: {{selectedBook.volumeInfo.authors.join(', ')}}</div>
+            <div class="publisher name">Published by: {{selectedBook.volumeInfo.publisher}}</div>
+            <img *ngIf="selectedBook.volumeInfo.imageLinks.thumbnail" src="{{selectedBook.volumeInfo.imageLinks.thumbnail}}" class="big-thumb"/>
+            <!-- <img *ngIf="!selectedBook.thumbnail" alt="Loading.." /> -->
+            <p>{{selectedBook.volumeInfo.description}} </p>
+        </div>
+    </div>
+</div>
