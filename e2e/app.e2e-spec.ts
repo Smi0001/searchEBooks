@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('angular-get-started App', () => {
+describe('search-e-books App', () => {
   let page: AppPage;
 
   beforeEach(() => {
