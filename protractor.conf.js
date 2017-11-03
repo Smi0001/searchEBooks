@@ -2,6 +2,7 @@
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
 const { SpecReporter } = require('jasmine-spec-reporter');
+let runtimePort = (process.env.port || 4200);
 
 exports.config = {
   allScriptsTimeout: 11000,
@@ -12,7 +13,7 @@ exports.config = {
     'browserName': 'chrome'
   },
   directConnect: true,
-  baseUrl: 'http://localhost:4200/',
+  baseUrl: 'http://localhost:' + runtimePort + '/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
